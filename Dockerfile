@@ -21,11 +21,6 @@ RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
 # Install Python and Basic Python Tools
 RUN apt-get install -y python python-dev python-distribute python-pip libpq-dev python-dev postgresql postgresql-contrib
 
-# ADD /home/appdir /home/appdir
-
-# Copy the application folder inside the container
-# ADD /home/appdir/docker_example /home/appdir
-
 # Expose ports
 EXPOSE 7000
 EXPOSE 80
@@ -35,17 +30,6 @@ EXPOSE 9000
 WORKDIR /home/appdir/docker_example
 
 RUN pip install --upgrade pip
-
-#RUN pip install -r requirements.txt
-
-#RUN python manage.py syncdb --noinput --settings=config.settings.development
-
-#RUN python manage.py migrate --settings=config.settings.development
-
-#RUN python manage.py collectstatic --noinput --settings=config.settings.development
-
-# Set the default directory where CMD will execute
-WORKDIR /home/appdir/docker_example
 
 # Set the default command to execute    
 # when creating a new container
