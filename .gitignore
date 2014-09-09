@@ -1,0 +1,20 @@
+# Compiled Python modules
+*.pyo
+*.pyc
+
+# Virtualenv
+venv/*
+
+# SQLite
+*.db
+*.s3db
+*.sqlite3
+
+# Emacs save files
+*~
+\#*
+.\#*
+
+# Vagrant private files
+.vagrant/*
+log
