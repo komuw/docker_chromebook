@@ -1,0 +1,25 @@
+---
+- hosts: all
+  gather_facts: no
+  sudo: yes
+  sudo_user: root
+
+  tasks:
+    - name: Update cache if last run was more than 36000secs ago
+      apt: update_cache=yes cache_valid_time=36000
+
+    - name: Install system packages
+      apt: pkg={{ item }} state=present
+      with_items:
+        - build-essential
+        - python-dev
+        - python-setuptools
+        - python-pip
+        - curl
+
+    - name: install docker
+      shell: sudo curl -sSL https://get.docker.io/ubuntu/ | sudo sh
+
+    #remember to copy the appropriate directory from where this project diretory is
+    - name: copy app dir
+      copy: src=/home/komu/work/docker_example dest=/home/appdir

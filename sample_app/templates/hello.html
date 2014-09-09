@@ -1,0 +1,17 @@
+{% extends 'admin/base_site.html' %}
+
+{% block extrastyle %}
+  {{ block.super }}
+ 
+{% endblock %}
+
+{% block title %} docker chromebook {% endblock %}
+
+{% block content %}
+<div id="content-main">
+	<h1>{{ hello }}</h1>
+<br/>
+django example ran with docker, from crouton on a chromebook. 
+</div>
+
+{% endblock %}
