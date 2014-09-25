@@ -1,6 +1,6 @@
 ## Docker usage inside crouton on a chromebook
 
-## we will run a small django app using docker in ubuntu in a chromebook.
+`we will run a small django app using docker in ubuntu in a chromebook.`
 
 ## Requirements
 
