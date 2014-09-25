@@ -1,5 +1,5 @@
 """
-WSGI config for docker_example project.
+WSGI config for docker_chromebook project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

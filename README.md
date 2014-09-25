@@ -1,6 +1,6 @@
-# Docker usage inside crouton on a chromebook
+## Docker usage inside crouton on a chromebook
 
-# we will run a small django app using docker in ubuntu in a chromebook.
+## we will run a small django app using docker in ubuntu in a chromebook.
 
 ## Requirements
 
@@ -12,7 +12,7 @@
 
 
 ## Steps
-- clone this repository into /home/docker_example
+- clone this repository into /home/docker_chromebook
     its important you clone it to that directory since it will be used by the ansible provisioning script. But you can clone it to any directory so long as you change the ansible task(copy app dir) found in provisioning/start.yml to point to your new directory.
 - change directory to it
 - start vagrant;
@@ -24,7 +24,7 @@
      
      vagrant ssh
 
-- Once in the VM, change directory to /home/appdir/docker_example (or wherever you asked ansible to copy the project directory to)
+- Once in the VM, change directory to /home/appdir/docker_chromebook (or wherever you asked ansible to copy the project directory to)
 - Build a docker image using the Dockerfile in this project
 
      sudo docker build -t test_img .
@@ -32,7 +32,7 @@
 - This will create an image called test_img
 - Now lets create an app/container based of this image
      
-     sudo docker run --name test_app -v /home/appdir/docker_example:/home/appdir/docker_example -p 7000:7000 -i -t test_img make run
+     sudo docker run --name test_app -v /home/appdir/docker_chromebook:/home/appdir/docker_chromebook -p 7000:7000 -i -t test_img make run
 
 - This creates a container named test_app and we are using the -v option to 'attach' the application directory to the container and we are also exposing the port 7000
 - We are also 'executing' the make run command. If you open the Makefile, you'll see that this just installs the application requirements, syncdb and then runserver.

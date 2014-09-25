@@ -27,7 +27,7 @@ EXPOSE 80
 EXPOSE 9000
 
 # Set the default directory where CMD will execute
-WORKDIR /home/appdir/docker_example
+WORKDIR /home/appdir/docker_chromebook
 
 RUN pip install --upgrade pip
 
@@ -42,5 +42,5 @@ CMD python manage.py createsuperuser --settings=config.settings.development
 
 # how to run an app from that image
 # sudo docker run --name test_app -p 7000:7000 -i -t test_img
-#  sudo docker run --name web -v /home/appdir/docker_example:/opt/webapp
-# sudo docker run --name web -v /home/appdir/docker_example:/home/appdir/docker_example -p 7000:7000 -i -t test_img make run
+#  sudo docker run --name web -v /home/appdir/docker_chromebook:/opt/webapp
+# sudo docker run --name web -v /home/appdir/docker_chroomebook:/home/appdir/docker_chromebook -p 7000:7000 -i -t test_img make run
