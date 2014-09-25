@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "provisioning/start.yml"
-    ansible.verbose = "vvvv"
+    ansible.verbose = "v"
   end
 
   # Cache apt-get package downloads to speed things up

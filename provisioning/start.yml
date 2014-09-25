@@ -22,4 +22,4 @@
 
     #remember to copy the appropriate directory from where this project diretory is
     - name: copy app dir
-      copy: src=/home/docker_chromebbok dest=/home/appdir
+      copy: src=/home/komu/work/docker_chromebook dest=/home/appdir
