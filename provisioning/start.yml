@@ -17,8 +17,14 @@
         - python-pip
         - curl
 
+    - name: check if docker installed
+      command: docker
+      register: result
+      ignore_errors: True
+
     - name: install docker
       shell: sudo curl -sSL https://get.docker.io/ubuntu/ | sudo sh
+      when: result|failed
 
     #remember to copy the appropriate directory from where this project diretory is
     - name: copy app dir
