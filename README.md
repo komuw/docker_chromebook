@@ -17,22 +17,18 @@
 - change directory to it
     `cd /home/docker_chromebook`
 - start vagrant;
-     
      `vagrant up`
 
 - Vagrant will provision a virtual machine installed with ubuntu 14.04 and also install docker among a few other packages. see the file provisioning/start.yml
 - Once vagrant finishes provisioning, ssh into the virtual machine(VM)
-     
      `vagrant ssh`
 
 - Once in the VM, change directory to /home/appdir/docker_chromebook (or wherever you asked ansible to copy the project directory to)
 - Build a docker image using the Dockerfile in this project
-
      `sudo docker build -t test_img .`
 
 - This will create an image called test_img
 - Now lets create an app/container based of this image
-     
      `sudo docker run --name test_app -v /home/appdir/docker_chromebook:/home/appdir/docker_chromebook -p 7000:7000 -i -t test_img make run`
 
 - This creates a container named test_app and we are using the -v option to 'attach' the application directory to the container and we are also exposing the port 7000
@@ -47,7 +43,6 @@ Its important that you expose the same port in your Dockerfile as is forwarded i
 
 
 # Enjoy
-- Questions can be addressed to 
-     
-      komuw05 [at] gmail [dot] com
+- Questions can be addressed to: 
+      `komuw05 [at] gmail [dot] com`
 
