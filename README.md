@@ -12,10 +12,11 @@
 
 
 ## Steps
-- clone this repository into /home/docker_chromebook
-    its important you clone it to that directory since it will be used by the ansible provisioning script. But you can clone it to any directory so long as you change the ansible task(copy app dir) found in provisioning/start.yml to point to your new directory.     
+- clone this repository into ~/docker_chromebook
+    its important you clone it to that directory since it will be used by the ansible provisioning script. But you can clone it to any directory so long as you change the ansible task(copy app dir) found in provisioning/start.yml to point to your new directory.      
+    `git clone git@github.com:komuW/docker_chromebook.git ~/docker_chromebook`    
 - change directory to it     
-    `cd /home/docker_chromebook`
+    `cd ~/docker_chromebook`
 - start vagrant;     
      `vagrant up`
 
@@ -23,7 +24,7 @@
 - Once vagrant finishes provisioning, ssh into the virtual machine(VM)      
      `vagrant ssh`
 
-- Once in the VM, change directory to /home/appdir/docker_chromebook (or wherever you asked ansible to copy the project directory to)      
+- Once in the VM, change directory to /home/appdir/docker_chromebook (or wherever you asked ansible to copy the project directory to: see the ansible task called, copy app dir, inside provisioning/start.yml)      
      `cd /home/appdir/docker_chromebook`     
 - Build a docker image using the Dockerfile in this project     
      `sudo docker build -t test_img .`     
